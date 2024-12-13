@@ -9,15 +9,17 @@
 #define MAX_NACHNAME 30
 #define MAX_MAIL 320
 #define MAX_NOTE 15
+#define MAX_STRING 320
+
 
 typedef struct {
-	char vorname[MAX_VORNAME+1];
-	char nachname[MAX_NACHNAME+1];
+	char vorname[MAX_VORNAME+2];
+	char nachname[MAX_NACHNAME+2];
 }sGanzname;
 
 typedef struct {
 	sGanzname name;
-	char email[MAX_MAIL+1];
+	char email[MAX_MAIL+2];
 	int matrikelnummer;
 	int note;
 }sStudent;

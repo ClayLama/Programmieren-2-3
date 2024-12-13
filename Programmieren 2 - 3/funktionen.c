@@ -150,7 +150,7 @@ sElement* neuerStudentEingabe() {
 	//Eingabe Nachname
 	printf("Geben Sie den Nachnamen von dem Studenten ein: ");
 	while (!leseString(neuerStudent->student->name.nachname, MAX_NACHNAME)) {
-		printf("Bitte geben Sie maximal %d Zeichen ein.\nWie ist der Name des Regisseurs?: ", MAX_NACHNAME);
+		printf("Bitte geben Sie maximal %d Zeichen ein.\nGeben Sie den Nachnamen von dem Studenten ein: ", MAX_NACHNAME);
 	}
 	//Eingabe Email
 	printf("Bitte geben Sie die E-Mail-Adresse ein: ");
@@ -217,7 +217,7 @@ sElement* findeMatrikelnummer(sElement* liste, int matrikelnummer) {
 	sElement* cursor = findeListenAnfang(liste);
 
 	while (cursor != NULL && cursor->student->matrikelnummer != matrikelnummer) {
-			cursor = cursor->next;
+		cursor = cursor->next;
 	}
 
 	return cursor;
@@ -228,7 +228,7 @@ sElement* loescheStudi(sElement* student) {
 	sElement* cursor = student;
 
 	//Einziges Element
-	if (student->prev == NULL && student->next == NULL) 
+	if (student->prev == NULL && student->next == NULL)
 		cursor = NULL;
 
 	//Erstes Element 
@@ -241,7 +241,7 @@ sElement* loescheStudi(sElement* student) {
 	else if (student->next == NULL) {
 		cursor = student->prev;
 		student->prev->next = NULL;
-		
+
 	}
 
 	//Zwischendrin
@@ -261,7 +261,7 @@ sElement* loescheStudi(sElement* student) {
 /// Parameter: string, in dem gespeichert werden soll, maximale Anzahl an Zeichen
 /// Return:	Einlesen erfolgreich = 1, gescheitert = 0
 int leseString(char string[], int anzahlZeichen) {
-	if (fgets(string, anzahlZeichen, stdin) != NULL) {
+	if (fgets(string, anzahlZeichen + 2, stdin) != NULL) {
 
 		// Entferne das Newline-Zeichen, falls vorhanden
 		int len = (int)strlen(string);
