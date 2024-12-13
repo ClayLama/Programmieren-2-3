@@ -103,7 +103,6 @@ int zaehleStudierende(sElement* liste) {
 /// Parameter: Prüfungsliste, Element für das Position gefunden wird
 /// Return:	Index an den das Element gehört / -1 falls Matrikelnummer bereits in Liste vorhanden 
 int findePosition(sElement* liste, sElement* neu) {
-	int matrikNum = neu->student->matrikelnummer;	//Matrikelnummer des neuen Studenten für bessere Lesbarkeit
 	int index = 0;									//Position an der neuer Student gespeichert werden soll
 
 	sElement* cursor = findeListenAnfang(liste);
@@ -113,7 +112,7 @@ int findePosition(sElement* liste, sElement* neu) {
 		return index;
 
 	//Index wird solange erhöht, bis Matrikelnummer vom neuen Studeneten größer-gleich aktueller Cursor
-	while (cursor->student->matrikelnummer <= matrikNum) {
+	while (cursor->student->matrikelnummer <= neu->student->matrikelnummer) {
 
 		index++;
 		if (cursor->next != NULL)
@@ -122,7 +121,7 @@ int findePosition(sElement* liste, sElement* neu) {
 			break;
 	}
 	//Falls Matrikelnummer bereits vorhanden
-	if (cursor->student->matrikelnummer == matrikNum)
+	if (cursor->student->matrikelnummer == neu->student->matrikelnummer)
 		return -1;
 
 	return index;
@@ -139,6 +138,7 @@ sElement* neuerStudentEingabe() {
 	neuerStudent->student = (sStudent*)malloc(sizeof(sStudent));
 	if (neuerStudent->student == NULL) {
 		printf("Kein Speicher vorhanden!\n");
+		free(neuerStudent);
 		exit(1);
 	}
 
@@ -253,6 +253,7 @@ sElement* loescheStudi(sElement* student) {
 
 	free(student->student);
 	free(student);
+	student = NULL;
 	return cursor;
 }
 
@@ -261,6 +262,7 @@ sElement* loescheStudi(sElement* student) {
 /// Return:	Einlesen erfolgreich = 1, gescheitert = 0
 int leseString(char string[], int anzahlZeichen) {
 	if (fgets(string, anzahlZeichen, stdin) != NULL) {
+
 		// Entferne das Newline-Zeichen, falls vorhanden
 		int len = (int)strlen(string);
 		if (len > 0 && string[len - 1] == '\n') {
