@@ -24,6 +24,18 @@ typedef struct {
 	int note;
 }sStudent;
 
+/*
+	Entscheidung: Möglichkeit 4: Doppelt verkettete Liste mit Zeiger auf Studierendendaten
+
+	Gründe:
+	- Vor- und Rückwärtsnavigation erleichtert Einfügen und Löschen.
+	- Daten können unabhängig von der Liste verwaltet und theoretisch mehrfach genutzt werden.
+	- Geringerer Speicherverbrauch pro Listenelement.
+
+	Nachteile:
+	- Verwaltung ist komplexer
+*/
+
 //Listenelement
 typedef struct sElement {
 	sStudent* student;
