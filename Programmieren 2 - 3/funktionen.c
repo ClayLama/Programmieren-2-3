@@ -1,4 +1,4 @@
-#include "DatentypenFunktionsprototypen.h"
+#include "datentypenFunktionsprototypen.h"
 
 /// Ziel: Element mit Student wird in Liste eingefügt
 /// Parameter: Prüfungsliste, neues Element, index an dem eingefügt wird

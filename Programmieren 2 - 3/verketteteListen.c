@@ -1,6 +1,6 @@
 //PPR2 – Übung 3 – Prof. Dr. Ulrike Herster
 //"verketteteListen.c", 13.12.2024, Autoren: Kendelbacher, Pham, Schreiner
-#include "DatentypenFunktionsprototypen.h"
+#include "datentypenFunktionsprototypen.h"
 
 int main() {
 	sElement* liste = NULL;				//Pruefungsliste mit allen Studierenden

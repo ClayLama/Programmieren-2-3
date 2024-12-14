@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="verketteteListen.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="funktionen.c">
@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DatentypenFunktionsprototypen.h">
+    <ClInclude Include="datentypenFunktionsprototypen.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
