@@ -177,7 +177,7 @@ void ausgabeListe(sElement* liste) {
 	int aktuellerStudent = zaehleStudierende(liste);
 
 	//Liste Leer
-	if (!aktuellerStudent) {
+	if (aktuellerStudent == 0) {
 		printf("In der Pruefungsliste befinden sich keine Studenten.\n");
 		return;
 	}
