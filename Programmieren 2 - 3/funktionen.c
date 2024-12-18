@@ -281,7 +281,7 @@ int leseString(char string[], int anzahlZeichen) {
 /// Parameter: Minimal mögliche Eingabe, Maximal mögliche Eingabe
 /// Return: Einlesen erfolgreich = 1, gescheitert = 0
 int leseZahl(int minimalZahl, int maximalZahl, int* zahl) {
-	int korrekteEingabe = scanf_s("%7d", zahl);
+	int korrekteEingabe = scanf_s("%9d", zahl);
 
 	if (*zahl > maximalZahl || *zahl < minimalZahl)
 		korrekteEingabe = 0;
